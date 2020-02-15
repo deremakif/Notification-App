@@ -46,14 +46,14 @@ namespace MassTransitConsumerApi
                         // Bir mesaj bir sebepten gönderilemediğinde 5 saniye arayla 4 kere DAHA göndermeye çalışır.
                         ep.UseMessageRetry(r => r.Interval(4, 5000));
                         
-                        ep.ConfigureConsumer<TestConsumer>(serviceProvider);
+                        ep.ConfigureConsumer<NotificationConsumer>(serviceProvider);
                     });
                 });
             }
 
             void ConfigureMassTransit(IServiceCollectionConfigurator configurator)
             {
-                configurator.AddConsumer<TestConsumer>();
+                configurator.AddConsumer<NotificationConsumer>();
             }
 
             // configures MassTransit to integrate with the built-in dependency injection

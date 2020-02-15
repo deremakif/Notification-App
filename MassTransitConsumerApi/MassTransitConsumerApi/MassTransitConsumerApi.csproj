@@ -9,5 +9,9 @@
     <PackageReference Include="MassTransit.RabbitMQ" Version="6.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 
 </Project>

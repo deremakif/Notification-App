@@ -9,7 +9,7 @@ using Test.Messages;
 
 namespace MassTransitConsumerApi.Consumers
 {
-    public class TestConsumer : IConsumer<TestMessage>
+    public class NotificationConsumer : IConsumer<TestMessage>
     {
         public Task Consume(ConsumeContext<TestMessage> context)
         {
