@@ -30,5 +30,18 @@ namespace MassTransitPublishApi.Controllers
             yield return task;
 
         }
+
+        /// <summary>
+        /// Mesaj yollamak için kullanılır.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        [HttpPost("PublishNotification")]
+        public IActionResult PublishNotification([FromBody]TestMessage message)
+        {
+            var task = _bus.Publish(new TestMessage { Body = message.Body, Title = message.Title, To = "fNSbPuo4IE8:APA91bFqP2mmKEEsqI8pnzrqpiWtJmiT-YviswUAFkgaCh_Z6ZjwaaScJjIEM7de06X0T2DwAhynDZQBkWSGAlUR-SHoThAOAvs2UqTL5UcXtl8R53L7W-UwjJyb1KW0eYHk5UPrlag0" });
+            return Ok();
+        }
+
     }
 }
